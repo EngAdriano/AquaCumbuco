@@ -1710,7 +1710,7 @@ int8_t localizarPosicaoLivre(void)    //Localiza posição livre para armazenar 
 void InitEEPROM(void)               //Roda apenas uma vez, quando módulo for resetado de fábrica/Módulo novo
 {
   char posicaoInicial = 0;
-  uint8_t mudaSemana[7] = {1, 0, 1, 0, 1, 0, 1};
+  uint8_t mudaSemana[7] = {1, 1, 1, 1, 1, 1, 1};
   uint8_t muda = 0;
 
   posicaoInicial = EEPROM.read(EEPROM_INICIO); 
@@ -1731,7 +1731,6 @@ void InitEEPROM(void)               //Roda apenas uma vez, quando módulo for re
         muda++;
       }
     }
-
     EEPROM.commit();
   }
   lcd.clear();
